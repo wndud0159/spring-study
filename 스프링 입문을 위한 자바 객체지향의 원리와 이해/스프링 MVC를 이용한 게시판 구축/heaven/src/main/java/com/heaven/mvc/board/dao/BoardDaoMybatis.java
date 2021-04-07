@@ -22,4 +22,36 @@ public class BoardDaoMybatis implements BoardDao{
 	public List<BoardVO> list() {
 		return sqlSessionTemplate.selectList("list");
 	}
+	
+	@Override
+	public int delete(BoardVO boardVO ) {
+		return sqlSessionTemplate.delete("delete", boardVO);	
+	}
+	
+	@Override
+	public int deleteAll() {
+		return sqlSessionTemplate.delete("deleteAll");
+	}
+	
+	@Override
+	public int update(BoardVO boardVO) {
+		return sqlSessionTemplate.update("update", boardVO);
+	}
+	
+	@Override
+	public void insert(BoardVO boardVO) {
+		sqlSessionTemplate.insert("insert", boardVO);
+	}
+	
+	@Override
+	public BoardVO select(int seq) {
+		BoardVO vo = (BoardVO) sqlSessionTemplate.selectOne("select", seq);
+		return vo;
+	}
+	
+	@Override
+	public int updateReadCount(int seq) {
+		return sqlSessionTemplate.update("updateCount", seq);
+	}
+	
 }

@@ -22,4 +22,24 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.list();
 	}
 	
+	@Override
+	public int delete(BoardVO boardVO) {
+		return boardDao.delete(boardVO);
+	}
+	
+	@Override
+	public int edit(BoardVO boardVO) {
+		return boardDao.update(boardVO);
+	}
+	
+	@Override
+	public void write(BoardVO boardVO) {
+		boardDao.insert(boardVO);
+	}
+	
+	@Override
+	public BoardVO read(int seq) {
+		boardDao.updateReadCount(seq);
+		return boardDao.select(seq);
+	}
 }
