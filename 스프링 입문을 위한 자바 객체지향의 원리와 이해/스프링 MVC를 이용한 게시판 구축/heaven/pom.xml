@@ -14,11 +14,19 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+	<!-- 유효성검증(Validation)을 위한 lib -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.1.3.Final</version>
+	</dependency>
+	<!-- 한글때문에 xml파싱 오류 날 경우를 위한 lib -->
 	<dependency>
     <groupId>xerces</groupId>
     <artifactId>xercesImpl</artifactId>
     <version>2.9.1</version>
-</dependency>
+	</dependency>
+	<!-- mybatis lib -->
 	<dependency>
 		<groupId>org.mybatis</groupId>
 		<artifactId>mybatis</artifactId>

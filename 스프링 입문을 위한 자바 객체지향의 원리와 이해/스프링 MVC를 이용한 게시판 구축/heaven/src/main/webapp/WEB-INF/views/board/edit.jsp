@@ -35,13 +35,13 @@
 			<tr>
 				<th><form:label path="password">비밀번호</form:label></th>
 				<td>
-					<form:input path="password" />
-					<form:errors path="password" />
+					<input type="password" id="pwd" name="pwd" />
+					${msg }
 				</td>
 			</tr>
 		</table>
 		<div>
-			<input type="submit" value="등록" />
+			<input type="submit" value="수정" />
 			<a href="<c:url value="/board/list"/>">목록</a>
 		</div>
 	</form:form>
