@@ -1,0 +1,19 @@
+package com.heaven.mvc.board.domain;
+
+import java.sql.Timestamp;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("boardVO")
+public class BoardVO {
+	private int seq;
+	private String title;
+	private String content;
+	private String writer;
+	private int password;
+	private Timestamp regDate;
+	private int cnt;
+	
+	
+	
+}

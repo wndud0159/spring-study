@@ -1,0 +1,8 @@
+package com.heaven.mvc.board.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("boardVO")
+public class BoardVO {
+
+}

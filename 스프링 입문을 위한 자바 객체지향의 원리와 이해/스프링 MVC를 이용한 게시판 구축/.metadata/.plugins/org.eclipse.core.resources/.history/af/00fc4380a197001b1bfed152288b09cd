@@ -1,0 +1,25 @@
+package com.heaven.mvc.board.service;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.heaven.mvc.board.dao.BoardDao;
+import com.heaven.mvc.board.domain.BoardVO;
+
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	@Resource
+	private BoardDao boardDao;
+	
+	
+	@Override
+	public List<BoardVO> list() {
+		return boardDao.list();
+	}
+	
+}

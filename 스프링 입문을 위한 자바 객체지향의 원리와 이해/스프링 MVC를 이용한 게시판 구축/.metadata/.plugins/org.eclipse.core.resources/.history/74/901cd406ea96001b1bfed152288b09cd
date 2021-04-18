@@ -1,0 +1,6 @@
+package com.heaven.mvc.board.domain;
+
+@Alias("boardVO")
+public class BoardVO {
+
+}

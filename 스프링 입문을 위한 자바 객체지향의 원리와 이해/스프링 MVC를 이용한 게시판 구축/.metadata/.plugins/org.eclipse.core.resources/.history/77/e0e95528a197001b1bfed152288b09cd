@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boardDAO">
+	<select id="list" resultType="boardVO">
+		select * from BOARD
+		order by seq
+	</select>
+	
+	<select id="select" resultType="boardVO" parameterType="int">
+		select * from BOARD
+		where seq = #{seq}
+	</select> 
+	
+	<insert id="insert" parameterType="boardVO">
+		insert into BOARD
+		(title, content, writer, regDate, cnt)
+		VALUES
+		(#{title},#{content},#{writer},#{password},SYSDATE,0);
+		<selectKey keyProperty="seq" resultType="Integer">
+		select nvl(MAX(seq),0) from BOARD
+		</selectKey>
+	</insert>
+</mapper>
